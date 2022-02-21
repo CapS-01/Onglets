@@ -1,0 +1,84 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    
+}
+.box {
+    width: 660px;
+    height: 360px;
+    background: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.container {
+    background: #f1f1f1;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    border-bottom: 1px solid #333;
+}
+.onglet {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight:700 ;
+    cursor: pointer;
+}
+/* méthode pour faire bordure de 3élément sans répéter pour le 3e */
+.onglet:not(:nth-child(3)){
+    border-right: 1px solid #333;
+}
+
+.contenu {
+    height: 70%;
+    width: 660px;
+    position: absolute;
+    opacity: 0;
+    
+}
+.contenu h3 {
+    padding: 20px;
+}
+.contenu hr {
+   width: 20%;
+   height: 3px;
+   margin-left: 20px;
+   background: #000; 
+   border: none;
+}
+.contenu p {
+    padding: 20px;
+    font-family:"Gideon Roman", sans-serif
+
+}
+
+/* Les class annimé */
+
+.active {
+    background: midnightblue;
+    color: #f1f1f1;
+    transition: all 0.3 ease;
+}
+.activeContenu {
+    animation: fade 0.8s forwards;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
